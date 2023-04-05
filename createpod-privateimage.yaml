@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myhelloapp-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myhelloapp
+  template:
+    metadata:
+      labels:
+        app: myhelloapp
+    spec:
+      containers:
+      - name: myhelloapp-container
+        image: sandeepsoni/mynginx:v1
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: mydockersecret
