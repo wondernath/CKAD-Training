@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2023-04-04T14:07:26Z"
+  labels:
+    kubernetes.io/metadata.name: panneer1
+  name: panneer1
+  resourceVersion: "6610"
+  uid: b0cbcfb5-0f8e-4010-8ea9-ca90f9f8c334
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

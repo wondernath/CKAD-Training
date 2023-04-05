@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dp1
+  labels:
+    app: nginx-app
+  annotations:
+    kubernetes.io/change-cause: 'nginx:1.21.0'
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+      annotations:
+        kubernetes.io/change-cause: 'nginx:1.21.0'
+    spec:
+      containers:
+      - name: mynginx-con
+        image: nginx:1.21.0
+        ports:
+        - containerPort: 80

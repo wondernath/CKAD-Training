@@ -1,0 +1,231 @@
+    1  code .
+    2  pwd
+    3  docker run hello-world
+    4  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    5  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    6  minikube config set driver docker
+    7  sudo snap install kubectl --classic
+    8  minikube start
+    9  sudo snap install --classic code
+   10  code .
+   11  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+   12  wget -O- https://apt.releases.hashicorp.com/gpg |     gpg --dearmor |     sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+   13  gpg --no-default-keyring     --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg     --fingerprint
+   14  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+   15      https://apt.releases.hashicorp.com $(lsb_release -cs) main" |     sudo tee /etc/apt/sources.list.d/hashicorp.list
+   16  sudo apt update
+   17  sudo apt-get install terraform
+   18  dir
+   19  cls
+   20  terraform
+   21  pwd
+   22  sudo apt-get update 
+   23  sudo apt-get upgrade -y
+   24  sudo apt install ubuntu-mate-core -y 
+   25  sudo apt-get -y install xrdp
+   26  sudo apt-get remove docker docker-engine docker.io containerd runc
+   27  sudo apt-get update
+   28  sudo apt-get install     ca-certificates     curl     gnupg     lsb-release
+   29  sudo mkdir -p /etc/apt/keyrings
+   30  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   31  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   32    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   33  sudo apt-get update
+   34  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+   35  sudo docker run hello-world
+   36  sudo groupadd docker
+   37  sudo usermod -aG docker $USER
+   38  newgrp docker
+   39  docker ps -a
+   40  docker diff 748385e8fbcf
+   41  mkdir panneer
+   42  cd panneer/
+   43  code .
+   44  cat /etc/nginx/conf.d
+   45  docker ps -a
+   46  docker container prune
+   47  docker version
+   48  docker pull hello-world
+   49  docker pull nginx
+   50  docker pull alpine
+   51  docker pull ubuntu
+   52  docker images
+   53  docker image ls
+   54  docker image history nginx
+   55  docker inspect nginx
+   56  os
+   57  whoami
+   58  cat /etc/os-release
+   59  docker ps
+   60  docker ps -a
+   61  docker run hello-world
+   62  docker ps
+   63  docker ps -a
+   64  docker inspect hello-world
+   65  docker ps -a
+   66  docker rm distracted_golick minikube epic_villani kind_borg
+   67  docker ps -a
+   68  docker run --rm hello-world
+   69  docker ps -a
+   70  docker container prune
+   71  docker image prune
+   72  docker images
+   73  docker run alpine ls -l
+   74  docker ps -a
+   75  docker container prune
+   76  docker rm
+   77  docker run -it alpine sh
+   78  docker ps -a
+   79  docker start 5a
+   80  docker ps -a
+   81  docker attach d3
+   82  docker attach 5a
+   83  docker ps -a
+   84  docker start 5a
+   85  docker attach 5a
+   86  docker ps -a
+   87  docker start 5a
+   88  docker attach 5a
+   89  docker ps -a
+   90  docker run -itd alpine sh
+   91  docker ps -a
+   92  docker attach 6c
+   93  docker ps -a
+   94  docker container prune
+   95  docker images
+   96  docker run -it alpine
+   97  docker ps -a
+   98  docker top 8e
+   99  docker container prune
+  100  docker ps -a
+  101  docker rm 83 5a
+  102  docker stop 8e 5a
+  103  docker container prune
+  104  docker run nginx
+  105  docker ps
+  106  docker run -d nginx
+  107  docker ps
+  108  docker inspect a6
+  109  curl http://172.17.0.2
+  110  docker ps -a
+  111  docker stop a6
+  112  docker stop f7
+  113  docker container prune
+  114  docker run -d --rm -p 8080:80 nginx
+  115  docker stop nginx
+  116  docker stop b6
+  117  docker logs b6
+  118  docker ps -a
+  119  docker run -d --rm -p 8080:80 nginx
+  120  docker logs c5
+  121  docker stop b6
+  122  docker stop c5
+  123  docker ps -a
+  124  docker run -d nginx
+  125  docker ps
+  126  docker inspect c4
+  127  clear
+  128  docker ps
+  129  docker exec -it c4 sh
+  130  ls -l
+  131  docker ps
+  132  clear
+  133  docker ps
+  134  docker
+  135  docker commit
+  136  docker ps
+  137  docker commit c4 mynginx:1.0
+  138  docker iamges
+  139  docker images
+  140  docker run -p 8081:80 mynginx
+  141  docker images
+  142  docker run -p 8081:80 mynginx:1.0
+  143  minikube start
+  144  kubectl version
+  145  kubectl cluster-info
+  146  kubectl config get-contexts
+  147  kubectl run mynginx --image=nginx --port 80
+  148  kubectl get all
+  149  kubectl get pods -o wide
+  150  kubectl logs mynginx
+  151  kubectl describe mynginx
+  152  kubectl describe
+  153  kubectl describe pod mynginx
+  154  kubectl get pod/mynginx -o wide
+  155  kubectl exec -it mynginx sh
+  156  kubectl get pods
+  157  kubectl port-forward mynginx 8085:80
+  158  kubectl get pods
+  159  kubectl delete pod mynginx
+  160  kubectl get pods
+  161  docker ps -a
+  162  cd panneer
+  163  kubectl get pod/mynginx -o yaml > pod-new.yaml
+  164  kubectl run mynginx --image=nginx -o yaml --dry-run=client > pod-client.yaml
+  165  kubectl run mynginx --image=nginx -o yaml --dry-run=server > pod-server.yaml
+  166  kubectl delete mynginx
+  167  kubectl delete pod mynginx
+  168  kubectl run mynginx --image=nginx -o yaml --dry-run=server > pod-server.yaml
+  169  docker build -t mynginx:1.1
+  170  docker build -t mynginx:v2
+  171  docker build -t mynginx
+  172  docker build -t mynginx:1.1 .
+  173  docker images
+  174  docker run -d mynginx:1:1
+  175  docker run -d mynginx:1.1
+  176  docker run -d -p8090:80 mynginx:1.1
+  177  docker run -d -p 8090:80 mynginx:1.1
+  178  docker build
+  179  kubectl apply -f pod.yaml 
+  180  kubectl get pods
+  181  kubectl get all
+  182  kubectl delete -f pod.yaml 
+  183  kubectl create -f pod.yaml 
+  184  kubectl apply -f pod.yaml 
+  185  kubectl delete -f pod.yaml 
+  186  kubectl apply -f pod.yaml 
+  187  kubectl pods --show-lables
+  188  kubectl pods --show-labels
+  189  kubectl pods --show-label
+  190  kubectl apply -f pod.yaml 
+  191  kubectl get pods
+  192  kubectl get pods --show-labels
+  193  kubectl diff -f pod.yaml 
+  194  kubectl get pod/mynginx -o yaml
+  195  kubectl get pod/mynginx -o yaml > pod-new.yaml
+  196  kubectl replace -f pod-new.yaml
+  197  kubectl replace --help
+  198  kubectl run mynginx --image=nginx -o yaml --dry-run=client > pod-client.yaml
+  199  kubectl get pods -o wide
+  200  kubectl run myubuntu -it --rm --image ubuntu -- sh
+  201  kubectl describe svc my-service-ip
+  202  kubectl describe svc my-service-cip
+  203* 
+  204  kubectl run myubuntu -it --rm --image ubuntu -- sh
+  205  kubectl describe svc my-service-cip
+  206  cd panneer
+  207  kubectl apply -f nodeport.yaml 
+  208  curl http://minikube:30008
+  209  kubectl describe svc
+  210  minikube ip
+  211  curl http://192.168.49.2:30008
+  212  minikube addons enable ingress
+  213  kubectl get ns
+  214  cd /etc
+  215  sudo vi hosts
+  216  ping demo.mydomain.com
+  217  kubectl get pods -n ingress-nginx 
+  218  kubectl logs -n ingress-nginx pod/ingress-nginx-controller-*
+  219  kubectl logs -n ingress-nginx ingress-nginx-controller-5959f988fd-dqzs7
+  220  cd
+  221  kubectl create configmap mysettings-config1 --from-literal name=SANDEEP1 --from-literal location=INDIA1 -n Development
+  222  kubectl create ns Development
+  223  kubectl create configmap mysettings-config1 --from-literal name=SANDEEP1 --from-literal location=INDIA1
+  224  kubectl get cm mysettings-config1 -o yaml
+  225  cd panneer
+  226  vi demo.txt
+  227  vi demo2.txt
+  228  kubectl get cm
+  229  kubectl create cm mysettings-config2 --from-file demo.txt --from-file demo2.txt
+  230  kubectl get cm mysettings-config2 -oyaml
+  231  history > kubetraining.txt
