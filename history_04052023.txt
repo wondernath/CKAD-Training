@@ -1,0 +1,566 @@
+    1  code .
+    2  pwd
+    3  docker run hello-world
+    4  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    5  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    6  minikube config set driver docker
+    7  sudo snap install kubectl --classic
+    8  minikube start
+    9  sudo snap install --classic code
+   10  code .
+   11  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+   12  wget -O- https://apt.releases.hashicorp.com/gpg |     gpg --dearmor |     sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+   13  gpg --no-default-keyring     --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg     --fingerprint
+   14  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+   15      https://apt.releases.hashicorp.com $(lsb_release -cs) main" |     sudo tee /etc/apt/sources.list.d/hashicorp.list
+   16  sudo apt update
+   17  sudo apt-get install terraform
+   18  dir
+   19  cls
+   20  terraform
+   21  pwd
+   22  sudo apt-get update 
+   23  sudo apt-get upgrade -y
+   24  sudo apt install ubuntu-mate-core -y 
+   25  sudo apt-get -y install xrdp
+   26  sudo apt-get remove docker docker-engine docker.io containerd runc
+   27  sudo apt-get update
+   28  sudo apt-get install     ca-certificates     curl     gnupg     lsb-release
+   29  sudo mkdir -p /etc/apt/keyrings
+   30  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   31  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   32    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   33  sudo apt-get update
+   34  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+   35  sudo docker run hello-world
+   36  sudo groupadd docker
+   37  sudo usermod -aG docker $USER
+   38  newgrp docker
+   39  docker ps -a
+   40  docker diff 748385e8fbcf
+   41  mkdir panneer
+   42  cd panneer/
+   43  code .
+   44  cat /etc/nginx/conf.d
+   45  docker ps -a
+   46  docker container prune
+   47  docker version
+   48  docker pull hello-world
+   49  docker pull nginx
+   50  docker pull alpine
+   51  docker pull ubuntu
+   52  docker images
+   53  docker image ls
+   54  docker image history nginx
+   55  docker inspect nginx
+   56  os
+   57  whoami
+   58  cat /etc/os-release
+   59  docker ps
+   60  docker ps -a
+   61  docker run hello-world
+   62  docker ps
+   63  docker ps -a
+   64  docker inspect hello-world
+   65  docker ps -a
+   66  docker rm distracted_golick minikube epic_villani kind_borg
+   67  docker ps -a
+   68  docker run --rm hello-world
+   69  docker ps -a
+   70  docker container prune
+   71  docker image prune
+   72  docker images
+   73  docker run alpine ls -l
+   74  docker ps -a
+   75  docker container prune
+   76  docker rm
+   77  docker run -it alpine sh
+   78  docker ps -a
+   79  docker start 5a
+   80  docker ps -a
+   81  docker attach d3
+   82  docker attach 5a
+   83  docker ps -a
+   84  docker start 5a
+   85  docker attach 5a
+   86  docker ps -a
+   87  docker start 5a
+   88  docker attach 5a
+   89  docker ps -a
+   90  docker run -itd alpine sh
+   91  docker ps -a
+   92  docker attach 6c
+   93  docker ps -a
+   94  docker container prune
+   95  docker images
+   96  docker run -it alpine
+   97  docker ps -a
+   98  docker top 8e
+   99  docker container prune
+  100  docker ps -a
+  101  docker rm 83 5a
+  102  docker stop 8e 5a
+  103  docker container prune
+  104  docker run nginx
+  105  docker ps
+  106  docker run -d nginx
+  107  docker ps
+  108  docker inspect a6
+  109  curl http://172.17.0.2
+  110  docker ps -a
+  111  docker stop a6
+  112  docker stop f7
+  113  docker container prune
+  114  docker run -d --rm -p 8080:80 nginx
+  115  docker stop nginx
+  116  docker stop b6
+  117  docker logs b6
+  118  docker ps -a
+  119  docker run -d --rm -p 8080:80 nginx
+  120  docker logs c5
+  121  docker stop b6
+  122  docker stop c5
+  123  docker ps -a
+  124  docker run -d nginx
+  125  docker ps
+  126  docker inspect c4
+  127  clear
+  128  docker ps
+  129  docker exec -it c4 sh
+  130  ls -l
+  131  docker ps
+  132  clear
+  133  docker ps
+  134  docker
+  135  docker commit
+  136  docker ps
+  137  docker commit c4 mynginx:1.0
+  138  docker iamges
+  139  docker images
+  140  docker run -p 8081:80 mynginx
+  141  docker images
+  142  docker run -p 8081:80 mynginx:1.0
+  143  minikube start
+  144  kubectl version
+  145  kubectl cluster-info
+  146  kubectl config get-contexts
+  147  kubectl run mynginx --image=nginx --port 80
+  148  kubectl get all
+  149  kubectl get pods -o wide
+  150  kubectl logs mynginx
+  151  kubectl describe mynginx
+  152  kubectl describe
+  153  kubectl describe pod mynginx
+  154  kubectl get pod/mynginx -o wide
+  155  kubectl exec -it mynginx sh
+  156  kubectl get pods
+  157  kubectl port-forward mynginx 8085:80
+  158  kubectl get pods
+  159  kubectl delete pod mynginx
+  160  kubectl get pods
+  161  docker ps -a
+  162  cd panneer
+  163  kubectl get pod/mynginx -o yaml > pod-new.yaml
+  164  kubectl run mynginx --image=nginx -o yaml --dry-run=client > pod-client.yaml
+  165  kubectl run mynginx --image=nginx -o yaml --dry-run=server > pod-server.yaml
+  166  kubectl delete mynginx
+  167  kubectl delete pod mynginx
+  168  kubectl run mynginx --image=nginx -o yaml --dry-run=server > pod-server.yaml
+  169  docker build -t mynginx:1.1
+  170  docker build -t mynginx:v2
+  171  docker build -t mynginx
+  172  docker build -t mynginx:1.1 .
+  173  docker images
+  174  docker run -d mynginx:1:1
+  175  docker run -d mynginx:1.1
+  176  docker run -d -p8090:80 mynginx:1.1
+  177  docker run -d -p 8090:80 mynginx:1.1
+  178  docker build
+  179  kubectl apply -f pod.yaml 
+  180  kubectl get pods
+  181  kubectl get all
+  182  kubectl delete -f pod.yaml 
+  183  kubectl create -f pod.yaml 
+  184  kubectl apply -f pod.yaml 
+  185  kubectl delete -f pod.yaml 
+  186  kubectl apply -f pod.yaml 
+  187  kubectl pods --show-lables
+  188  kubectl pods --show-labels
+  189  kubectl pods --show-label
+  190  kubectl apply -f pod.yaml 
+  191  kubectl get pods
+  192  kubectl get pods --show-labels
+  193  kubectl diff -f pod.yaml 
+  194  kubectl get pod/mynginx -o yaml
+  195  kubectl get pod/mynginx -o yaml > pod-new.yaml
+  196  kubectl replace -f pod-new.yaml
+  197  kubectl replace --help
+  198  kubectl run mynginx --image=nginx -o yaml --dry-run=client > pod-client.yaml
+  199  kubectl get pods -o wide
+  200  kubectl run myubuntu -it --rm --image ubuntu -- sh
+  201  kubectl describe svc my-service-ip
+  202  kubectl describe svc my-service-cip
+  203  kubectl run myubuntu -it --rm --image ubuntu -- sh
+  204  kubectl describe svc my-service-cip
+  205  cd panneer
+  206  kubectl apply -f nodeport.yaml 
+  207  curl http://minikube:30008
+  208  kubectl describe svc
+  209  minikube ip
+  210  curl http://192.168.49.2:30008
+  211  minikube addons enable ingress
+  212  kubectl get ns
+  213  cd /etc
+  214  sudo vi hosts
+  215  ping demo.mydomain.com
+  216  kubectl get pods -n ingress-nginx 
+  217  kubectl logs -n ingress-nginx pod/ingress-nginx-controller-*
+  218  kubectl logs -n ingress-nginx ingress-nginx-controller-5959f988fd-dqzs7
+  219  cd
+  220  kubectl create configmap mysettings-config1 --from-literal name=SANDEEP1 --from-literal location=INDIA1 -n Development
+  221  kubectl create ns Development
+  222  kubectl create configmap mysettings-config1 --from-literal name=SANDEEP1 --from-literal location=INDIA1
+  223  kubectl get cm mysettings-config1 -o yaml
+  224  cd panneer
+  225  vi demo.txt
+  226  vi demo2.txt
+  227  kubectl get cm
+  228  kubectl create cm mysettings-config2 --from-file demo.txt --from-file demo2.txt
+  229  kubectl get cm mysettings-config2 -oyaml
+  230  history > kubetraining.txt
+  231  cat kubetraining.txt 
+  232  kubectl get all pods
+  233  history > history.txt
+  234  cat history.txt | grep kubectl
+  235  cat history.txt | grep kube
+  236  docker ps -a
+  237  docker container prune
+  238  minikube start
+  239  cd panneer
+  240  cd ..
+  241  code .
+  242  cd panneer
+  243  code .
+  244  kubectl get pods
+  245  ls | grep .y
+  246  kubectl apply -f pod.yaml 
+  247  kubectl get pods
+  248  kubectl get pods --show-labels
+  249  kubectl delete mynginx
+  250  kubectl delete pod mynginx
+  251  kubectl apply -f pod.yaml 
+  252  kubectl delete pod mynginx
+  253  kubectl create -f pod.yaml 
+  254  kubectl get pods --show-labels
+  255  kubectl edit pod mynginx
+  256  kubectl get pods --show-labels
+  257  minikube status
+  258  kubectl label pod mynginx environment=production tier=frontend
+  259  kubectl get pods --show-labels
+  260  kubectl label pod mynginx tier=backend --overwrite
+  261  kubectl get pods --show-labels
+  262  kubectl get pods
+  263  kubectl create -f pod.yaml 
+  264  kubectl get pods
+  265  kubectl get pods --selector tier=backend
+  266  kubectl get pods --selector tier=frontend
+  267  kubectl get pods --selector environment=production
+  268  kubectl get pods -l environment=production
+  269  kubectl get pods -l 'tier in (frontend,backend)'
+  270  kubectl get pods -l 'environment notin (production), tier in (frontend,backend)'
+  271  kubectl apply -f pod.yaml 
+  272  kubectl get pods -l 'environment notin (production), tier in (frontend,backend)'
+  273  kubectl get pods --selector enviroment=production, tier=frontend
+  274  kubectl get pods --selector environment=production, tier=frontend
+  275  kubectl get pods --selector environment=production,tier=frontend
+  276  kubectl get pods --selector environment=test,tier=frontend
+  277  kubectl annotate pod mygnix --owner=panneer
+  278  kubectl annotate pod mynginx --owner=panneer
+  279  kubectl annotate pod mynginx owner=panneer
+  280  kubectl get pod/mynginx -o yaml
+  281  kubectl get ns
+  282  kubectl get pods --namespace=default
+  283  kubectl get pods --namespace=kube-system
+  284  kubectl get pods --n=kube-system
+  285  kubectl get pods -n=kube-system
+  286  kubectl get pods -n kube-system
+  287  kubectl get pods -n kube-public
+  288  kubectl get pods -n kube-node-lease
+  289  kubectl apply -f pod.yaml -n panneer
+  290  kubectl create namespace panneer
+  291  kubectl apply -f pod.yaml -n panneer
+  292  kubctl get pods -n panneer
+  293  kubectl get pods -n panneer
+  294  kubectl get pods --all-namespaces
+  295  kubectl apply -f pod.yaml
+  296  kubectl get ns panneer -o yaml
+  297  kubectl apply -f pod.yaml
+  298  kubectl create -f pod.yaml
+  299  kubectl create -f namespace.yaml
+  300  kubectl create -f pod.yaml
+  301  kubectl get pods --all-namespaces
+  302  kubectl delete ns panneer1
+  303  kubectl get pods --all-namespaces
+  304  kubectl get all -A
+  305  kubectl get all --all-namespaces
+  306  kubectl create -f pod.yaml -n panneer
+  307  kubectl config get-contexts 
+  308  kubect get api-resources
+  309  kubectl get api-resources
+  310  kubectl api-resources
+  311  kubectl get deployments -v 6
+  312  kubectl get deployments -v 10
+  313  kubectl apply -f replication.yaml 
+  314  kubectl get all
+  315  kubectl delete pod mynginx
+  316  kubectl delete pod mynginx1
+  317  kubectl get all
+  318  kubectl apply -f replication.yaml 
+  319  kubectl get all
+  320  kubectl delete pod/nginx-rc-p2t5z
+  321  kubectl get all
+  322  kubectl apply -f replication.yaml 
+  323  kubectl get all
+  324  kubectl apply -f replication.yaml 
+  325  kubectl get all
+  326  kubectl delete -f replication.yaml 
+  327  kubectl get all
+  328  kubectl get pods
+  329  kubectl delete -f replication_copy.yaml 
+  330  kubectl apply -f replication_copy.yaml 
+  331  kubectl get pods
+  332  kubectl apply -f replication_copy.yaml 
+  333  kubectl get pods
+  334  kubectl get all
+  335  kubectl apply -f replication_copy.yaml 
+  336  kubectl get all
+  337  kubectl apply -f replication_copy.yaml 
+  338  kubectl delete -f replication_copy.yaml 
+  339  kubectl apply -f replication_copy.yaml 
+  340  kubectl apply -f replicaset.yaml 
+  341  kubectl get all
+  342  kubectl apply -f replicaset.yaml 
+  343  kubectl scale rs nginx-rs --replaces=5
+  344  kubectl scale rs nginx-rs --replicas=5
+  345  kubectl get all
+  346  kubectl delete nginx-rs
+  347  kubectl delete rs nginx-rs
+  348  kubectl apply -f deployment.yaml 
+  349  kubectl apply -f deployments.yaml 
+  350  kubectl get all
+  351  kubectl delete rs nginxr-s
+  352  kubectl delete rs nginx-rs
+  353  kubectl apply -f deployments.yaml 
+  354  kubectl get all
+  355  kubectl apply -f deployments.yaml 
+  356  kubectl get all
+  357  kubectl rollout undo deployment.apps/nginx-dp
+  358  kubectl history undo deployment.apps/nginx-dp
+  359  kubectl history deployment.apps/nginx-dp
+  360  kubectl rollout history deployment.apps/nginx-dp
+  361  kubectl get all
+  362  kubectl describe pod/nginx-dp-987fd64d-5kq54
+  363  kubectl apply -f deployments.yaml 
+  364  kubectl get all
+  365  kubectl describe pod/nginx-dp-77666ffff7-729lk
+  366  kubectl rollout history deployment.apps/nginx-dp
+  367  kubectl apply -f deployments.yaml 
+  368  kubectl get all
+  369  kubectl describe pod/nginx-dp-657fb8d7d6-ns2wx
+  370  kubectl rollout history deployment.apps/nginx-dp
+  371  kubectl apply -f deployments.yaml 
+  372  kubectl rollout history deployment.apps/nginx-dp
+  373  kubectl rollout undo deployment nginx-dep
+  374  kubectl rollout undo deployment nginx-dp
+  375  kubectl rollout history deployment.apps/nginx-dp
+  376  kubectl rollout undo deployment nginx-dp
+  377  kubectl rollout history deployment.apps/nginx-dp
+  378  kubectl rollout undo deployment nginx-dp --to-revison=1
+  379  kubectl rollout undo deployment nginx-dp --to-revison=2
+  380  kubectl rollout undo deployment nginx-dp --to-revision=2
+  381  kubectl rollout history deployment.apps/nginx-dp
+  382  kubectl get all
+  383  kubectl describe replicaset.apps/nginx-dp-987fd64d
+  384  kubectl describe pod/nginx-dp-6fdd4f584d-jxk2x
+  385  kubectl apply -f deployments.yaml 
+  386  kubectl delete -f deployments.yaml 
+  387  kubectl apply -f deployments.yaml 
+  388  kubectl get all
+  389  kubectl apply -f deployments.yaml 
+  390  kubectl apply -f deployments2.yaml 
+  391  kubectl apply -f deployments.yaml 
+  392  kubectl get all
+  393  kubectl apply -f deployments.yaml 
+  394  kubectl get all
+  395  kubectl apply -f deployments.yaml 
+  396  kubectl get all
+  397  kubectl apply -f deployments.yaml 
+  398  kubectl get all
+  399  kubectl apply -f deployments.yaml 
+  400  kubectl get all
+  401  kubectl delete -f deployments.yaml 
+  402  kubectl get all
+  403  kubectl delete -f deployments2.yaml 
+  404  kubectl get all
+  405  kubectl delete -f deployments.yaml 
+  406  kubectl apply -f deployments.yaml 
+  407  kubectl get all
+  408  kubectl apply -f deployments.yaml 
+  409  kubectl get all
+  410  kubectl apply -f deployments.yaml 
+  411  kubectl get all
+  412  kubectl apply -f deployments.yaml 
+  413  kubectl get all
+  414  minikube addons enable dashboard
+  415  minikube dashboard
+  416  cd panneer
+  417  history > history.txt
+  418  cat history.txt 
+  419  git clone https://github.com/wondernath/CKAD-Training.git
+  420  ls -l
+  421  cd CKAD-Training/
+  422  git status
+  423  git add -A
+  424  git commit -m 'CKAD Training materials'
+  425  git status
+  426  git push
+  427  git push -u origin main
+  428  git remote add origin https://github.com/wondernath/CKAD-Training.git
+  429  git log
+  430  git push
+  431  cd ..
+  432  ls
+  433  cd git/
+  434  git clone git@github.com:wondernath/CKAD-Training.git
+  435  cd ..
+  436  minikube
+  437  minikube status
+  438  minikube start
+  439  minikube status
+  440  minikube addons enable dashboard
+  441  minikube addons enable ingress
+  442  history | grep dashboard
+  443  minikube dashboard
+  444  kubectl get cm
+  445  kubectl descrive cm mysettings-config1
+  446  kubectl describe cm mysettings-config1
+  447  cd panneer
+  448  code .
+  449  kubectl create -f secret.yaml
+  450  kubectl describe secret dbsecrets
+  451  kubectl apply -f secret.yaml
+  452  kubectl exec -it test-pod
+  453  kubectl exec -it test-pod sh
+  454  kubectl get secrets dbsecrets -o yaml
+  455  kubectl apply -f createpod-privateimage.yaml 
+  456  kubectl create -f createpod-privateimage.yaml 
+  457  kubectl describe pod deployment.apps/myhelloapp-deployment
+  458  kubectl describe pod myhelloapp-deployment
+  459* kubectl delete pod 
+  460  kubectl create secret docker-registry mydockersecret --docker-username="sandeepsoni" --docker-password "Sandeep@75" --docker-server=docker.io
+  461  kubectl apply -f createpod-privateimage.yaml 
+  462  kubectl get pods
+  463  kubectl delete -f createpod-privateimage.yaml 
+  464  kubectl create -f createpod-privateimage.yaml 
+  465  kubectl get pods
+  466  kubectl apply -f createpod-privateimage.yaml 
+  467  kubectl get pods
+  468  kubectl kubectl pod prune
+  469  kubectl get secrets mydockersecret -o yaml > secrets.yaml
+  470  kubectl get secrets mydockersecret -o yaml
+  471  history | grep prune
+  472  kubectl get all
+  473  kubectl get pods
+  474  kubectl delete -f createpod-privateimage.yaml 
+  475  kubectl create -f emptydir.yaml 
+  476  kubectl get pods
+  477  kubectl get all
+  478  kubectl get all -o wide
+  479  kubectl delete pod test-pod
+  480  kubectl get all -o wide
+  481  kubectl exec -it sharevol -c c1 -- bash
+  482  kubectl exec -it sharevol -c c2 -- bash
+  483  kubectl delete -f emptydir.yaml 
+  484  kubectl create -f emptydir.yaml 
+  485  kubectl exec -it sharevol -c c2 -- bash
+  486  kubectl delete -f emptydir.yaml 
+  487  kubectl create -f volume-hostpath.yaml 
+  488  kubectl exec -it pod/test-pd -c test-container
+  489  kubectl exec -it pod/test-pd -c test-container -- bash
+  490  kubectl delete -f volume-hostpath.yaml 
+  491  kubectl create -f volume-hostpath.yaml 
+  492  kubectl exec -it pod/test-pd -c test-container -- bash
+  493  cd /data
+  494  cat /var/lib/docker/volumes/minikube/_data/data/hello.txt
+  495  sudo cat /var/lib/docker/volumes/minikube/_data/data/hello.txt
+  496  kubectl create -f persistentvolumeandvolumeclaim.yaml 
+  497  kubetctl get pv
+  498  kubectl get pv
+  499  kubectl get pvc
+  500  kubectl get pv -O
+  501  kubectl get pv -o yaml
+  502  kubectl get pvc -o yaml
+  503  kubectl apply -f persistentvolumeandvolumeclaim.yaml 
+  504  kubectl delete -f persistentvolumeandvolumeclaim.yaml 
+  505  kubectl apply -f persistentvolumeandvolumeclaim.yaml 
+  506  kubectl get pv
+  507* kubectl delete pvc
+  508  kubectl delete -f persistentvolumeandvolumeclaim.yaml 
+  509  kubectl get all
+  510  kubectl delete pod/test-pd
+  511  kubectl get all
+  512  kubectl create ns n1
+  513  kubectl apply -f resourcequota.yaml 
+  514  kubectl get resourcequota mem-cpu-demo --namespace=n1 --output=yaml
+  515  kubectl apply -f resourcewithquota.yaml 
+  516  kubectl get resourcequota mem-cpu-demo --namespace=n1 --output=yaml
+  517  kubectl apply -f resourcewithquota.yaml 
+  518  kubectl delete -f resourcewithquota.yaml 
+  519  kubectl apply -f resourcewithquota.yaml 
+  520  kubectl delete -f resourcewithquota.yaml 
+  521  kubectl delete ns n1
+  522  minikube addons enable metrics-server
+  523  kubectl get pods -n kube-ssytem
+  524  kubectl get pods -n kube-system
+  525  kubectl top pods
+  526  kubectl top pods --containers
+  527  kubectl get pods -n kube-system
+  528  kubectl top nodes
+  529  kubectl apply -f podforautoscale.yaml 
+  530  kubectl get pods
+  531  kubectl top pods
+  532  kubectl apply -f autoscaler.yaml 
+  533  kubectl top pods
+  534  kubectl get pods
+  535  kubectl get hpa
+  536  kubectl get hpa --watch
+  537  kubectl delete -f autoscaler.yaml 
+  538  kubectl delete -f podforautoscale.yaml 
+  539  kubectl apply -f initcontainer.yaml 
+  540  kubectl top pods --watch
+  541  kubectl pods top --watch
+  542  kubectl get pods --watch
+  543  kubectl delete -f initcontainer.yaml 
+  544  kubectl apply -f initcontainer.yaml -v 6
+  545  kubectl get pods --watch
+  546  kubectl delete -f initcontainer.yaml 
+  547  kubectl apply -f livenessprobe.yaml 
+  548  kubectl get pods --watch
+  549  kubectl delete -f livenessprobe.yaml 
+  550  kubectl apply -f readinessprobe.yaml 
+  551  kubectl get pods --watch
+  552  kubectl delete -f readinessprobe.yaml 
+  553  name='testing'
+  554  echo $name
+  555  kubectl events
+  556  kubectl get events
+  557  kubectl get pods
+  558  kubectl get -A
+  559  kubectl config get-contexts
+  560  kubectl get sa -A
+  561  kubectl get roles -A
+  562  kubectl get roles kube-proxy-o yaml
+  563  kubectl get roles kube-proxy-o yaml -n kube-system
+  564  kubectl get roles kube-proxy -o yaml -n kube-system
+  565  kubectl get clusterroles -A
+  566  history > history_04052023.txt
